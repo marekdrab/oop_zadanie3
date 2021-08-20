@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add life insurance</title>
+</head>
+<body>
+<form th:action="@{/add_life}" th:object="${agreement}" method="post">
+    <label>
+        <input type="hidden" th:field="*{id}"/>
+    </label>
+    <p th:text="${agreement.id}"></p>
+
+    <label for="sign_date">sign_date</label>
+    <input type="date" id="sign_date" th:field="*{sign_date}"/>
+    <br>
+
+    <label for="start_date">start_date</label>
+    <input type="date" id="start_date" th:field="*{start_date}"/>
+    <br>
+
+    <label for="end_date">end_date</label>
+    <input type="date" id="end_date" th:field="*{end_date}"/>
+    <br>
+
+    <label for="insurerId">insurerId</label>
+    <input type="number" id="insurerId" th:field="*{insurerId}"/>
+    <br>
+
+    <label for="amount">amount</label>
+    <input type="number" id="amount" th:field="*{amount}"/>
+    <br>
+
+    <label for="month_payment">month_payment</label>
+    <input type="number" id="month_payment" th:field="*{month_payment}"/>
+    <br>
+
+    <label for="insuredid">insuredid</label>
+    <input type="number" id="insuredid" th:field="*{insuredid}"/>
+    <br>
+
+    <label for="permanent_consequences">permanent_consequences</label>
+    <input type="number" id="permanent_consequences" th:field="*{permanent_consequences}"/>
+    <br>
+
+
+    <label for="death_case">death_case</label>
+    <input type="number" id="death_case" th:field="*{death_case}"/>
+    <br>
+
+
+    <label for="daily_payment">daily_payment</label>
+    <input type="number" id="daily_payment" th:field="*{daily_payment}"/>
+    <br>
+
+
+   <select name="territorialValidity">
+       <option th:each="territorialValidity : ${T(sk.fei.stuba.oop.zadanie3.mvcupdate.enums.TerritorialValidity).values()}"
+                th:value="${territorialValidity}"
+                th:text="${territorialValidity}">
+       </option>
+   </select>
+
+    <input type="submit" value="Submit"/>
+</form>
+
+</body>
+</html>

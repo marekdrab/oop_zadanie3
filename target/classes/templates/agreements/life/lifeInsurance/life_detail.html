@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Life Insurance Detail</title>
+</head>
+<body>
+<p th:text="${'ID: ' +agreement.id}"></p>
+<p th:text="${'Sign date: '+agreement.sign_date}"></p>
+<p th:text="${'Start date: '+agreement.start_date}"></p>
+<p th:text="${'End date: '+agreement.end_date}"></p>
+<p th:text="${'Insurer ID: '+agreement.insurerId}"></p>
+<p th:text="${'Amount: '+agreement.amount}"></p>
+<p th:text="${'Month payment: '+agreement.month_payment}"></p>
+<p th:text="${'Insured ID: '+agreement.insuredid}"></p>
+<p th:text="${'Permanent consequences: '+agreement.permanent_consequences}"></p>
+<p th:text="${'Death case: '+agreement.death_case}"></p>
+<p th:text="${'Daily payment: '+agreement.daily_payment}"></p>
+<p th:text="${'Territorial validity: '+agreement.territorialValidity}"></p>
+<a th:href="@{'/update_agreement/'+${agreement.id}}" >update agreement</a>
+</body>
+</html>

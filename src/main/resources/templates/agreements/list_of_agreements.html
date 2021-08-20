@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List of agreements</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th class="mdl-data-table__cell--non-numeric">Sign date</th>
+        <th class="mdl-data-table__cell--non-numeric">Start date</th>
+        <th class="mdl-data-table__cell--non-numeric">End date</th>
+        <th class="mdl-data-table__cell--non-numeric">Month payment</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="agreement: ${agreements1.values()}">
+        <td th:text="${agreement.sign_date}"></td>
+        <td th:text="${agreement.start_date}"></td>
+        <td th:text="${agreement.end_date}"></td>
+        <td th:text="${agreement.month_payment}"></td>
+        <td><a th:href="@{'/update_agreement/'+${agreement.id}}" >update agreement</a></td>
+    </tr>
+    <tr th:each="agreement: ${agreements2.values()}">
+        <td th:text="${agreement.sign_date}"></td>
+        <td th:text="${agreement.start_date}"></td>
+        <td th:text="${agreement.end_date}"></td>
+        <td th:text="${agreement.month_payment}"></td>
+        <td><a th:href="@{'/update_agreement/'+${agreement.id}}" >update agreement</a></td>
+    </tr>
+    <tr th:each="agreement: ${agreements3.values()}">
+        <td th:text="${agreement.sign_date}"></td>
+        <td th:text="${agreement.start_date}"></td>
+        <td th:text="${agreement.end_date}"></td>
+        <td th:text="${agreement.month_payment}"></td>
+        <td><a th:href="@{'/update_agreement/'+${agreement.id}}" >update agreement</a></td>
+    </tr>
+    <tr th:each="agreement: ${agreements4.values()}">
+        <td th:text="${agreement.sign_date}"></td>
+        <td th:text="${agreement.start_date}"></td>
+        <td th:text="${agreement.end_date}"></td>
+        <td th:text="${agreement.month_payment}"></td>
+        <td><a th:href="@{'/update_agreement/'+${agreement.id}}" >update agreement</a></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update user</title>
+</head>
+<body>
+<form th:action="@{/update_user}" th:object="${user}" method="post">
+
+    <label>
+        <input type="hidden" th:field="*{id}"/>
+    </label>
+    <p th:text="${user.id}"></p>
+    <label for="first_name">first_name</label>
+    <input type="text" id="first_name" th:field="*{first_name}"/>
+    <br>
+
+    <label for="last_name">last_name</label>
+    <input type="text" id="last_name" th:field="*{last_name}"/>
+    <br>
+
+    <label for="email">email</label>
+    <input type="email" id="email" th:field="*{email}"/>
+    <br>
+
+    <label for="permanent_street">permanent_street</label>
+    <input type="text" id="permanent_street" th:field="*{permanent_address.street}"/>
+    <br>
+
+    <label for="permanent_house_number">permanent_house_number</label>
+    <input type="text" id="permanent_house_number" th:field="*{permanent_address.house_number}"/>
+    <br>
+
+    <label for="permanent_city">permanent_city</label>
+    <input type="text" id="permanent_city" th:field="*{permanent_address.city}"/>
+    <br>
+
+    <label for="permanent_post_code">permanent_post_code</label>
+    <input type="text" id="permanent_post_code" th:field="*{permanent_address.post_code}"/>
+    <br>
+
+    <label for="mailing_street">mailing_street</label>
+    <input type="text" id="mailing_street" th:field="*{mailing_address.street}"/>
+    <br>
+
+
+    <label for="mailing_house_number">mailing_house_number</label>
+    <input type="text" id="mailing_house_number" th:field="*{mailing_address.house_number}"/>
+    <br>
+
+
+    <label for="mailing_city">mailing_city</label>
+    <input type="text" id="mailing_city" th:field="*{mailing_address.city}"/>
+    <br>
+
+
+    <label for="mailing_post_code">mailing_post_code</label>
+    <input type="text" id="mailing_post_code" th:field="*{mailing_address.post_code}"/>
+    <br>
+
+
+    <label for="ssid">ssid</label>
+    <input type="number" id="ssid" th:field="*{ssid}"/>
+    <br>
+
+    <input type="submit" value="Submit"/>
+</form>
+</body>
+</html>

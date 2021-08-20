@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>House Insurance Detail</title>
+</head>
+<body>
+<p th:text="${'ID: ' +agreement.id}"></p>
+<p th:text="${'Sign date: '+agreement.sign_date}"></p>
+<p th:text="${'Start date: '+agreement.start_date}"></p>
+<p th:text="${'End date: '+agreement.end_date}"></p>
+<p th:text="${'Insurer ID: '+agreement.insurerId}"></p>
+<p th:text="${'Amount: '+agreement.amount}"></p>
+<p th:text="${'Month payment: '+agreement.month_payment}"></p>
+<p th:text="${'Real estate type: '+agreement.real_estate_type}"></p>
+<p th:text="${'Address: '+agreement.address.street+' '+agreement.address.house_number+', '+agreement.address.post_code+' '+agreement.address.city}"></p>
+<p th:text="${'Garage insurance: '+agreement.garage_insurance}"></p>
+<a th:href="@{'/update_agreement/'+${agreement.id}}" >update agreement</a>
+</body>
+</html>

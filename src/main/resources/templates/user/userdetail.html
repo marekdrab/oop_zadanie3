@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User detail</title>
+</head>
+<body>
+
+<p th:text="${'ID: ' +user.id}"></p>
+<p th:text="${'Name: '+user.first_name + ' ' +user.last_name}"></p>
+<p th:text="${'Email: '+user.email}"></p>
+<p th:text="${'SSID: '+user.ssid}"></p>
+<p th:text="${'Permanent address: '+user.permanent_address.street + ' '+ user.permanent_address.house_number + ', '+
+user.permanent_address.post_code + ' ' + user.permanent_address.city}"></p>
+<p th:text="${'Mailing address: '+user.mailing_address.street + ' '+ user.mailing_address.house_number + ', '+
+user.mailing_address.post_code + ' ' + user.mailing_address.city}"></p>
+<a th:href="@{'/update/'+${user.id}}" >update</a>
+
+<table>
+    <thead>
+    <tr>
+        <th class="mdl-data-table__cell--non-numeric">Sign date</th>
+        <th class="mdl-data-table__cell--non-numeric">Start date</th>
+        <th class="mdl-data-table__cell--non-numeric">End date</th>
+        <th class="mdl-data-table__cell--non-numeric">Month payment</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="agreement: ${agreements1.values()}">
+        <td th:text="${agreement.sign_date}"></td>
+        <td th:text="${agreement.start_date}"></td>
+        <td th:text="${agreement.end_date}"></td>
+        <td th:text="${agreement.month_payment}"></td>
+        <td><a th:href="@{'/detail_agreement/'+${agreement.id}}" >detail</a></td>
+        <td><a th:href="@{'/update_agreement/'+${agreement.id}}" >update agreement</a></td>
+    </tr>
+    <tr th:each="agreement: ${agreements2.values()}">
+        <td th:text="${agreement.sign_date}"></td>
+        <td th:text="${agreement.start_date}"></td>
+        <td th:text="${agreement.end_date}"></td>
+        <td th:text="${agreement.month_payment}"></td>
+        <td><a th:href="@{'/detail_agreement/'+${agreement.id}}" >detail</a></td>
+        <td><a th:href="@{'/update_agreement/'+${agreement.id}}" >update agreement</a></td>
+    </tr>
+    <tr th:each="agreement: ${agreements3.values()}">
+        <td th:text="${agreement.sign_date}"></td>
+        <td th:text="${agreement.start_date}"></td>
+        <td th:text="${agreement.end_date}"></td>
+        <td th:text="${agreement.month_payment}"></td>
+        <td><a th:href="@{'/detail_agreement/'+${agreement.id}}" >detail</a></td>
+        <td><a th:href="@{'/update_agreement/'+${agreement.id}}" >update agreement</a></td>
+    </tr>
+    <tr th:each="agreement: ${agreements4.values()}">
+        <td th:text="${agreement.sign_date}"></td>
+        <td th:text="${agreement.start_date}"></td>
+        <td th:text="${agreement.end_date}"></td>
+        <td th:text="${agreement.month_payment}"></td>
+        <td><a th:href="@{'/detail_agreement/'+${agreement.id}}" >detail</a></td>
+        <td><a th:href="@{'/update_agreement/'+${agreement.id}}" >update agreement</a></td>
+    </tr>
+    </tbody>
+</table>
+<a th:href="@{'/add_agreement/'}" >add agreement</a>
+</body>
+</html>

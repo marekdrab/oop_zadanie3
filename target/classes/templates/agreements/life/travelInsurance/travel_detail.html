@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Insurance Detail</title>
+</head>
+<body>
+<p th:text="${'ID: ' +agreement.id}"></p>
+<p th:text="${'Sign date: '+agreement.sign_date}"></p>
+<p th:text="${'Start date: '+agreement.start_date}"></p>
+<p th:text="${'End date: '+agreement.end_date}"></p>
+<p th:text="${'Insurer ID: '+agreement.insurerId}"></p>
+<p th:text="${'Amount: '+agreement.amount}"></p>
+<p th:text="${'Month payment: '+agreement.month_payment}"></p>
+<p th:text="${'Insured ID: '+agreement.insuredid}"></p>
+<p th:text="${'Destination: '+agreement.destination}"></p>
+<p th:text="${'Reason of travelling: '+agreement.reason_of_traveling}"></p>
+<a th:href="@{'/update_agreement/'+${agreement.id}}" >update agreement</a>
+</body>
+</html>

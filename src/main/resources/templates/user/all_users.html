@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All users</title>
+</head>
+
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <th class="mdl-data-table__cell--non-numeric">ID</th>
+        <th class="mdl-data-table__cell--non-numeric">First name</th>
+        <th class="mdl-data-table__cell--non-numeric">Last name</th>
+        <th class="mdl-data-table__cell--non-numeric">Email</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr th:each="user: ${users.values()}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.first_name}"></td>
+        <td th:text="${user.last_name}"></td>
+        <td th:text="${user.email}"></td>
+        <td><a th:href="@{'/userdetail/'+${user.id}}" >detail</a></td>
+        <td><a th:href="@{'/update/'+${user.id}}" >update</a></td>
+    </tr>
+    </tbody>
+</table>
+
+<a th:href="@{'/add_user/'}" >add</a>
+<a th:href="@{'/list_of_agreements/'}" >list_of_agreements</a>
+</body>
+</html>
